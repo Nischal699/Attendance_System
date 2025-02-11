@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="contact-form">
-        <form  method="post" action="{% url 'saveenquiry' %}">
+        <form  method="post" action="">
             {% csrf_token %}
          <input type="name" name="name" placeholder="Your Name" required>
          <input type="email" name="email" placeholder="Your Email" required>
