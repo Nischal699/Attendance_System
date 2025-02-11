@@ -3,48 +3,16 @@
 
     <!------------Home section---------->
     <section class="home" id="home">
-
-        <marquee onmouseover="stop()" onmouseout="start()"
-        style="width:100%;
-               height:50px;
-               position:relative;
-               z-index:999;
-               margin-bottom:49px;
-               margin-top:28px;
-              display:block;
-              line-height:50px">
-
-        {% for news in newsData %}
-        <a href="/newsdetails/{{news.news_slug}}"
-        style="color:white;
-              font-size:25px;
-              font-weight:bold">
-            {{news.news_title}} 
-        </a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-        
-            {% endfor %}
-        </marquee>
-
-
-        
         <div class="home-text">
             <div class="slide">
                 <span class="one">Hello</span>
-                <span class="two">I'm</span>
+                <span class="two">Sir</span>
             </div>
-            <h1>Nischal</h1>
-            <h3>Website<span> Designer.</span></h3>
-            <p>We Developer with 5+ years experience that keep customers<br>coming for about services make best effort.</p>
+            <h1>Welcome</h1>
+            <h3>To Our<span> Website.</span></h3>
+            <p>Its basically an attendence system website of school.<br>It provides lots of services with best effort.</p>
             <div class="button">
-                <a href="#" class="btn">About Me:</a>
+                <a href="#" class="btn">About Us:</a>
             </div>
         </div>
     </section>
