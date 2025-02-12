@@ -39,7 +39,6 @@ def register(request):
             user = form.save()
             msg = 'user created'
             return redirect('login')
-        
         else:
             msg = 'form is not valid'
     else:
@@ -69,7 +68,9 @@ def auth_login(request):
             msg = 'error validation form'
     return render(request,'login.html',{'form':form,'msg':msg})
 
-def logout(request):
+def logout_view(request):
+    print('logout')
+    logout(request)
     return render(request,'index.html')
 
 def adminPage(request):
