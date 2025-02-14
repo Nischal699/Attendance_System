@@ -16,4 +16,5 @@ urlpatterns = [
     path('adminpage/', views.adminPage, name='adminPage'),
     path('student/', views.studentPage, name='studentPage'),
     path('teacher/', views.teacherPage, name='teacherPage'),
+    path('saveenquiry/', views.saveEnquiry,name='saveenquiry'),
 ]

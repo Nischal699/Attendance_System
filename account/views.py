@@ -3,10 +3,29 @@ from django.shortcuts import render,redirect
 from .forms import SignUpForm,LoginForm
 from django.core.paginator import Paginator
 from django.contrib.auth import authenticate,login,logout
+from django.core.mail import send_mail,EmailMultiAlternatives
+from contactenquiry.models import contactEnquiry
+
 
 
 def homePage(request):
-    return render(request,"index.html")
+        subject='Thanking You'
+        from_email='xenobaka2@gmail.com'
+        msg='<h1>Welcome to <b>My website</b></h1><p>Thank you for using my website<p>'
+        to='nischal123321@gmail.com'
+        msg=EmailMultiAlternatives(subject,msg,from_email,[to])
+        msg.content_subtype='html'
+        msg.send()
+        
+        send_mail(
+        'Testing Mail',
+        'Here is the message',
+        'xenobaka2@gmail.com',
+        ['nischal123321@gmail.com'],
+        fail_silently=False,
+    )
+
+        return render(request,"index.html")
 
 def about(request):
     return render(request,"about.html")
@@ -86,3 +105,33 @@ def studentPage(request):
 
 def loginPage(request):
     return render(request,'loginPage.html')
+
+def saveEnquiry(request):
+    n=''
+    if request.method=="POST":
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        phone=request.POST.get('phone')
+        message=request.POST.get('message')
+        
+        en=contactEnquiry(name=name,email=email,phone=phone,message=message)
+        en.save()
+        n='Data Inserted'
+        
+    #subject='Testing Mail'
+    #from_email='xenobaka2@gmail.com'
+    #msg='<p>Welcome to <b>My website</b></p>'
+    #to='nischal123321@gmail.com'
+    #msg=EmailMultiAlternatives(subject,msg,from_email,[to])
+    #msg.content_subtype='html'
+    #msg.send()
+    
+    #send_mail(
+    #    'Testing Mail',
+    #   'Here is the message',
+    #   'xenobaka2@gmail.com',
+    #    ['nischal123321@gmail.com'],
+    #    fail_silently=False,
+    #)
+        
+    return render(request,"contact.html")
