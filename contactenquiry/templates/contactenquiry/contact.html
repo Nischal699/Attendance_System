@@ -27,15 +27,10 @@
         </div>
     </div>
     <div class="contact-form">
-        <form  method="post" action="">
+        <form  method="post" action=".">
             {% csrf_token %}
-         <input type="name" name="name" placeholder="Your Name" required>
-         <input type="email" name="email" placeholder="Your Email" required>
-         <input type="number" name="phone" placeholder="Your Contact Number" required>
-         <textarea cols="35" rows="10" name="message" placeholder="How can I help you,Sir?" required></textarea>
-         <input type="submit" name="submit" class="submit" required>
-         {{n}}
-
+            {{ form.as_p }}
+         <button type="submit" class="btn">SUBMIT</button>
         </form>
     </div>
 </section>
