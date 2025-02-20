@@ -21,6 +21,42 @@
     --p-font:1.1rem;
 }
 
+.lightmode{
+    --bg-color: #f8f9fa; /* Light grayish white background */
+    --second-bg-color: #e9ecef; /* Slightly darker light gray for contrast */
+    --text-color: #212529; /* Dark gray text for readability */
+    --second-color: #6c757d; /* Muted gray for secondary text */
+    --main-color: #007bff;
+    --big-font:5rem;
+    --h2-font:3rem;
+    --p-font:1.1rem;
+}
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--second-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#theme-switch svg{
+    fill: var(--main-color);
+}
+#theme-switch svg:last-child{
+    display: none;
+}
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
 body{
     background-color: var(--bg-color);
     color: var(--text-color);

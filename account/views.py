@@ -9,21 +9,21 @@ from contactenquiry.models import contactEnquiry
 
 
 def homePage(request):
-        subject='Thanking You'
-        from_email='xenobaka2@gmail.com'
-        msg='<h1>Welcome to <b>My website</b></h1><p>Thank you for using my website<p>'
-        to='nischal123321@gmail.com'
-        msg=EmailMultiAlternatives(subject,msg,from_email,[to])
-        msg.content_subtype='html'
-        msg.send()
+        #subject='Thanking You'
+        #from_email='xenobaka2@gmail.com'
+        #msg='<h1>Welcome to <b>My website</b></h1><p>Thank you for using my website<p>'
+        #to='nischal123321@gmail.com'
+        #msg=EmailMultiAlternatives(subject,msg,from_email,[to])
+        #msg.content_subtype='html'
+        #msg.send()
         
-        send_mail(
-        'Testing Mail',
-        'Here is the message',
-        'xenobaka2@gmail.com',
-        ['nischal123321@gmail.com'],
-        fail_silently=False,
-    )
+        #send_mail(
+        #'Testing Mail',
+        #'Here is the message',
+        #'xenobaka2@gmail.com',
+        #['nischal123321@gmail.com'],
+        #fail_silently=False,
+    #)
 
         return render(request,"index.html")
 
